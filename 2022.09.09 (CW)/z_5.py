@@ -2,7 +2,7 @@ a = int(input("Введите номер месяца"))
 
 
 if a == 1 or a == 2 or a == 12:
-
+    print("Зима")
 elif 6 > a > 2:
     print("Весна")
 elif 9 > a > 5:
