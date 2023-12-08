@@ -7,4 +7,31 @@
 # По его истечении док считается свободным. Если все доки заняты, заказ отклоняется.
 # Руководство станции хочет знать, какой заказ был обслужен последним.
 
-n = int(input())
+n = int(input("Введите количество доков у станции: "))
+
+print("Вводите пары начала и продолжительности обслуживания (в условных единицах) через пробел")
+print("После последней пары введите 0")
+
+orders = []
+
+ipt = input()
+while ipt != "0":
+    orders.append(list(map(int, input().split())))
+    ipt = input()
+
+
+orders.sort(key=lambda x: x[0])
+
+last = [0, 0, 0]
+docs = [0 for i in range(n)]
+for i in range(len(orders)):
+    for num, doc in enumerate(docs):
+        if orders[i][0] >= doc:
+            docs[num] = orders[i][0] + orders[i][1]
+            if last[2] < orders[i][0] + orders[i][1]:
+                last[0], last[1], last[2] = orders[i][0], orders[i][1], orders[i][0] + orders[i][1]
+
+            break
+
+
+print(f"Последний заказ: \nНачало работ - {last[0]}; \nПродолжительность - {last[1]};")

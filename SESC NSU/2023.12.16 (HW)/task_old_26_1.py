@@ -14,12 +14,14 @@
 boxes = list(map(int, input("Введите размеры коробок через пробел: ").split()))
 boxes.sort()
 
+
 k_boxes = [boxes[0]]
 
 boxes.pop(0)
 for box in boxes:
     if box >= k_boxes[-1] + 2:
         k_boxes.append(box)
+
 
 print(f"Длинна максимальной последовательности - {len(k_boxes)}")
 print(f"Коробки, которые следует выбрать - {k_boxes}")

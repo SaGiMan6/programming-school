@@ -13,6 +13,7 @@ while ipt != "0":
     receptions.append(list(map(int, ipt.split())))
     ipt = input()
 
+
 receptions.sort(key=lambda x: x[1])
 
 k_receptions = [receptions[0]]
@@ -20,5 +21,6 @@ receptions.pop(0)
 for reception in receptions:
     if k_receptions[-1][1] <= reception[0]:
         k_receptions.append(reception)
+
 
 print(f"Максимальное количество приемов - {len(k_receptions)}")
