@@ -7,5 +7,8 @@ def combinations(alphabet, n, prefix=""):
         for i in range(len(alphabet)):
             combinations(alphabet[i+1:], n-1, prefix + alphabet[i])
 
-# Запуск функции с M=3 и N=2
-combinations("ABC", 2)
+N = 2
+M = 3
+alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+
+combinations(alphabet[:M], N)
