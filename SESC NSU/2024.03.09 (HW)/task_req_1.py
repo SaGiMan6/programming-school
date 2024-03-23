@@ -1,12 +1,4 @@
-def generate_word(K, N, M):
-    """
-    Генерирует К-е слово в словарном порядке из первых M букв латинского алфавита.
-
-    :param K: Порядковый номер слова (1-based).
-    :param N: Длина слова.
-    :param M: Количество букв в алфавите (M <= 26).
-    :return: Сгенерированное слово.
-    """
+def generate_word(k, m, n):
     if N == 0:
         return ""
 
@@ -30,9 +22,11 @@ def generate_word(K, N, M):
     # Собираем слово
     return first_letter + remaining_word
 
+
 # Пример использования:
-K = 10  # Порядковый номер слова
-N = 4   # Длина слова
-M = 3   # Количество букв в алфавите (A, B, C)
-result_word = generate_word(K, N, M)
-print(f"Слово {K}-е в словарном порядке: {result_word}")
+k = int(input("Введите порядковый номер слова"))
+m = int(input("Введите количество букв в алфавите"))
+n = int(input("Введите длину искомого слова"))
+
+result_word = generate_word(k, m, n)
+print(f"Слово {k}-е в словарном порядке: {result_word}")
